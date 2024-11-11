@@ -7,45 +7,44 @@
     <link rel="icon" type="image/png" href="/static/favicon.png">
     <style>
         body {
-            background-color: #2D2D2D; /* Dark mode background */
-            color: #E6E6FA; /* Light lilac text color */
+            background-color: #1E1E1E; /* Dark mode background */
+            color: #D3D3D3; /* Light lilac text color */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        .navbar {
-            background-color: #4B0082; /* Indigo */
-            padding: 10px 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .navbar h1 {
-            color: #E6E6FA;
-            margin-left: 20px;
-            font-size: 2em;
+        .container {
+            display: flex;
+            width: 100%;
         }
 
-        .navbar input[type="text"] {
-            width: 300px;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            margin-right: 20px;
+        .left-column {
+            width: 30%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-right: 2px solid #3A3A3A;
+            overflow: hidden; /* Ensures no scrollbars */
+        }
+
+        .left-column h1 {
+            color: #FFFFFF; /* White text color */
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
         .profile-card {
-            background-color: #4B0082; /* Indigo */
+            background-color: #3A3A3A; /* Matching dark background */
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
-            width: 80%;
-            max-width: 400px;
-            margin: 20px auto;
+            width: 100%;
             animation: slideIn 1.5s ease-out;
         }
 
@@ -73,36 +72,65 @@
             60% { transform: translateY(-15px); }
         }
 
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
         .social-links a {
-            color: #E6E6FA; /* Light lilac */
-            margin: 0 10px;
+            color: #D3D3D3; /* Light lilac */
+            margin: 5px 0;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .social-links a:hover {
-            color: #9370DB; /* Medium purple */
+            color: #FFFFFF; /* White text on hover */
+        }
+
+        .right-column {
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #3A3A3A; /* Matching dark background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .projects-header h2 {
+            margin: 0;
+        }
+
+        .projects-header input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2D2D2D; /* Matching dark input background */
+            color: #D3D3D3; /* Light lilac text color */
         }
 
         .projects {
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #4B0082; /* Indigo */
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #E6E6FA;
-        }
-
-        .projects h2 {
-            margin-bottom: 20px;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            height: calc(100% - 60px); /* Ensure it doesn't overlap the header */
+            overflow-y: scroll;
         }
 
         .project {
-            background-color: #9370DB; /* Medium purple */
-            margin-bottom: 10px;
+            background-color: #5A5A5A; /* Slightly lighter for project cards */
+            width: calc(50% - 20px); /* Two projects per row with gap */
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -118,31 +146,39 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>literal gargoyle</h1>
-        <input type="text" id="search" placeholder="Search...">
-    </div>
-    <div class="profile-card">
-        <img src="/profile.gif" alt="Profile Picture">
-        <p>stupid lil' man</p>
-        <p>"Just remember, no caps when you spell the man name"</p>
-        <div class="social-links">
-            <a href="#">My Projects</a>
-            <a href="#">My Goofy Accounts</a>
-            <a href="#">Uhhh idk yet</a>
+    <div class="container">
+        <div class="left-column">
+            <h1>literal gargoyle</h1>
+            <div class="profile-card">
+                <img src="/profile.gif" alt="Profile Picture">
+                <p>stupid lil' man</p>
+                <p>"Just remember, no caps when you spell the man name"</p>
+            </div>
+            <div class="social-links">
+                <h2>"What's internet privacy again?"</h2>
+                <a href="https://www.youtube.com/@_Vanze_"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" onclick="thisAintDoShit()"><i class="fa-brands fa-discord"></i></a>
+                <script>function thisAintDoShit() { alert("This Aint do shit yet lil bro");}</script>
+                <a href="#">Uhhh idk yet</a>
+            </div>
         </div>
-    </div>
-    <div class="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Project 1 description goes here.</p>
+        <div class="right-column">
+            <div class="projects-header">
+                <h2>Projects</h2>
+                <input type="text" id="search" placeholder="Search projects...">
+            </div>
+            <div class="projects">
+                <div class="project">
+                    <h3>Cesium</h3>
+                    <p>An extremely lightweight Browser Proxy</p>
+                </div>
+                <div class="project">
+                    <h3>Minecraft /give Visualizer</h3>
+                    <p>Lets you see the item, its json data, the player, and the image sprite</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Project 2 description goes here.</p>
-        </div>
-        <!-- Add more projects as needed -->
     </div>
 </body>
 </html>
