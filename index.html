@@ -63,17 +63,6 @@
             margin: 10px 0;
         }
 
-        @keyframes slideIn {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes bounceIn {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
-        }
-
         .social-links { 
             grid-template-columns: repeat(3, 1fr); 
             gap: 10px;
@@ -111,7 +100,7 @@
             width: 70%;
             padding: 20px;
             display: flex;
-            flex-direction: column;
+            flex-direction: column
         }
 
         .projects-header {
@@ -204,15 +193,19 @@
             </div>
             <div class="projects">
                 <div class="project">
-                    <img src="/images/cesium.png" alt="Cesium Project">
                     <h3>Cesium</h3>
                     <p>An extremely lightweight Browser Proxy</p>
+                    <img src="/images/cesium.png" alt="Cesium Project image, im still clickable!">
                 </div>
                 <div class="project">
-                    <img src="/images/minecraft_give.png" alt="Minecraft /give Visualizer">
                     <h3>Minecraft /give Visualizer</h3>
                     <p>Lets you see the item, its json data, the player, and the image sprite</p>
+                    <img src="/images/minecraft_give.png" alt="Minecraft /give Visualizer project image, im still clickable!">
                 </div>
+                <div class="project">
+                    <h3>BulbaNotes</h3>
+                    <p>A simple note taking app that saves with cookies</p>
+                    <img src="/images/bulbanotes.png" alt="Bulbanotes image, im still clickable!">
                 <!-- Add more projects as needed -->
             </div>
         </div>
