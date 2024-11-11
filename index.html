@@ -91,6 +91,18 @@
             color: #FFFFFF; /* White text on hover */
         }
 
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .languages-grid img {
+            width: 32px;
+            height: 32px;
+        }
+
         .right-column {
             width: 70%;
             padding: 20px;
@@ -157,15 +169,17 @@
             </div>
             <div class="social-links">
                 <h2>"What's internet privacy again?"</h2>
-                <a href="https://www.youtube.com/@_Vanze_"><img src="images/Youtube-brands-solid.svg" width="32" height="32" alt="YouTube Logo"></a>
-                <a href="#" onclick="thisAintDoShit()"><img src="images/discord-brands-solid.svg" width="32" height="32" alt="Discord Logo"></a>
+                <a href="https://www.youtube.com/@_Vanze_"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="#" onclick="thisAintDoShit()"><i class="fab fa-discord fa-2x"></i></a>
                 <script>function thisAintDoShit() { alert("This Aint do shit yet lil bro");}</script>
                 <a href="#">Uhhh idk yet</a>
                 <h3>Languages I use</h3>
-                <img src="images/python-brands-solid.svg" width="32" height="32" alt="Python Logo">
-                <img src="images/html5-brands-solid.svg" width="32" height="32" alt="HTML Logo">
-                <img src="images/css3-alt-brands-solid.svg" width="32" height="32" alt="CSS Logo">
-                <img src="images/square-js-brands-solid.svg" width="32" height="32" alt="JS Logo">
+                <div class="languages-grid">
+                    <img src="images/python-brands-solid.svg" alt="Python Logo">
+                    <img src="images/html5-brands-solid.svg" alt="HTML Logo">
+                    <img src="images/css3-alt-brands-solid.svg" alt="CSS Logo">
+                    <img src="images/square-js-brands-solid.svg" alt="JS Logo">
+                </div>
             </div>
         </div>
         <div class="right-column">
