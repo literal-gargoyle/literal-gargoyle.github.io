@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>literal gargoyle</title>
-    <link rel="icon" type="image/png" href="/images/Profile.gif">
+    <link rel="icon" type="image/gif" href="/images/Profile.gif">
     <script src="https://kit.fontawesome.com/0485d5d175.js" crossorigin="anonymous"></script>
     <style>
         body {
@@ -15,6 +15,7 @@
             padding: 0;
             display: flex;
             height: 100vh;
+            overflow: hidden;
         }
 
         .container {
@@ -36,6 +37,8 @@
             color: #FFFFFF; /* White text color */
             font-size: 2.5em;
             margin-bottom: 20px;
+            position: relative;
+            top: -20px; /* Move it up a little */
         }
 
         .profile-card {
@@ -50,8 +53,8 @@
 
         .profile-card img {
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 150px; /* Adjusted size */
+            height: 150px; /* Adjusted size */
             margin-bottom: 15px;
             animation: bounceIn 1s ease;
         }
@@ -73,21 +76,24 @@
         }
 
         .social-links {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 10px;
             margin-top: 20px;
         }
 
         .social-links a {
-            color: #D3D3D3; /* Light lilac */
-            margin: 5px 0;
+            color: #A9A9A9; /* Lighter gray for better visibility */
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .social-links a:hover {
             color: #FFFFFF; /* White text on hover */
+        }
+
+        .social-links a i {
+            font-size: 32px;
         }
 
         .languages-grid {
@@ -135,17 +141,28 @@
         .projects {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 10px;
             height: calc(100% - 60px); /* Ensure it doesn't overlap the header */
             overflow-y: scroll;
         }
 
         .project {
             background-color: #5A5A5A; /* Slightly lighter for project cards */
-            width: calc(50% - 20px); /* Two projects per row with gap */
+            width: calc(33% - 10px); /* Three projects per row with gap */
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .project img {
+            width: 100px; /* Size of the project images */
+            height: 100px;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         .project h3 {
@@ -172,13 +189,13 @@
                 <a href="#" onclick="thisAintDoShit()"><img src="images/discord-brands-solid.svg" height="32" width="32" alt="Discord Icon"></a>
                 <script>function thisAintDoShit() { alert("This Aint do shit yet lil bro");}</script>
                 <a href="#" onclick="thisAintDoShit()"><img src="images/twitter-brands-solid.svg" height="32" width="32" alt="Twitter Icon"></a>
-                <h3>Languages I use</h3>
-                <div class="languages-grid">
-                    <img src="images/python-brands-solid.svg" alt="Python Logo">
-                    <img src="images/html5-brands-solid.svg" alt="HTML Logo">
-                    <img src="images/css3-alt-brands-solid.svg" alt="CSS Logo">
-                    <img src="images/square-js-brands-solid.svg" alt="JS Logo">
-                </div>
+            </div>
+            <h3>Languages I use</h3>
+            <div class="languages-grid">
+                <img src="images/python-brands-solid.svg" alt="Python Logo">
+                <img src="images/html5-brands-solid.svg" alt="HTML Logo">
+                <img src="images/css3-alt-brands-solid.svg" alt="CSS Logo">
+                <img src="images/square-js-brands-solid.svg" alt="JS Logo">
             </div>
         </div>
         <div class="right-column">
@@ -188,10 +205,12 @@
             </div>
             <div class="projects">
                 <div class="project">
+                    <img src="/images/cesium.png" alt="Cesium Project">
                     <h3>Cesium</h3>
                     <p>An extremely lightweight Browser Proxy</p>
                 </div>
                 <div class="project">
+                    <img src="/images/minecraft_give.png" alt="Minecraft /give Visualizer">
                     <h3>Minecraft /give Visualizer</h3>
                     <p>Lets you see the item, its json data, the player, and the image sprite</p>
                 </div>
