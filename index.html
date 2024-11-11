@@ -12,19 +12,29 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
         }
 
-        h1 {
-            color: #9370DB; /* Medium purple */
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out;
+        .navbar {
+            background-color: #4B0082; /* Indigo */
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar h1 {
+            color: #E6E6FA;
+            margin-left: 20px;
+            font-size: 2em;
+        }
+
+        .navbar input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 20px;
         }
 
         .profile-card {
@@ -35,6 +45,7 @@
             text-align: center;
             width: 80%;
             max-width: 400px;
+            margin: 20px auto;
             animation: slideIn 1.5s ease-out;
         }
 
@@ -49,11 +60,6 @@
         .profile-card p {
             font-size: 1.2em;
             margin: 10px 0;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
 
         @keyframes slideIn {
@@ -77,10 +83,45 @@
         .social-links a:hover {
             color: #9370DB; /* Medium purple */
         }
+
+        .projects {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #4B0082; /* Indigo */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #E6E6FA;
+        }
+
+        .projects h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project {
+            background-color: #9370DB; /* Medium purple */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project h3 {
+            margin: 0;
+        }
+
+        .project p {
+            margin: 5px 0 0;
+        }
     </style>
 </head>
 <body>
-    <h1>literal gargoyle</h1>
+    <div class="navbar">
+        <h1>literal gargoyle</h1>
+        <input type="text" id="search" placeholder="Search...">
+    </div>
     <div class="profile-card">
         <img src="/profile.gif" alt="Profile Picture">
         <p>stupid lil' man</p>
@@ -90,6 +131,18 @@
             <a href="#">My Goofy Accounts</a>
             <a href="#">Uhhh idk yet</a>
         </div>
+    </div>
+    <div class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Project 1 description goes here.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Project 2 description goes here.</p>
+        </div>
+        <!-- Add more projects as needed -->
     </div>
 </body>
 </html>
