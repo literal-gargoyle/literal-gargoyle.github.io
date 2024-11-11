@@ -15,7 +15,7 @@
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
+            
         }
 
         .container {
@@ -30,7 +30,6 @@
             flex-direction: column;
             align-items: flex-start;
             border-right: 2px solid #3A3A3A;
-            overflow: hidden; /* Ensures no scrollbars */
         }
 
         .left-column h1 {
@@ -47,14 +46,14 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
-            width: 100%;
+            width: 75%;
             animation: slideIn 1.5s ease-out;
         }
 
         .profile-card img {
             border-radius: 50%;
-            width: 150px; /* Adjusted size */
-            height: 150px; /* Adjusted size */
+            width: 25%; /* Adjusted size */
+            height: 25%; /* Adjusted size */
             margin-bottom: 15px;
             animation: bounceIn 1s ease;
         }
@@ -75,14 +74,14 @@
             60% { transform: translateY(-15px); }
         }
 
-        .social-links {
-            display: grid; 
+        .social-links { 
             grid-template-columns: repeat(3, 1fr); 
             gap: 10px;
             margin-top: 20px;
         }
 
         .social-links a {
+            display: grid;
             color: #A9A9A9; /* Lighter gray for better visibility */
             text-decoration: none;
             transition: color 0.3s;
