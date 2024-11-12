@@ -14,13 +14,15 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             height: 100vh;
-            
+            overflow: hidden;
         }
 
         .container {
             display: flex;
-            width: 100%;
+            flex: 1;
+            overflow: hidden;
         }
 
         .left-column {
@@ -30,14 +32,13 @@
             flex-direction: column;
             align-items: flex-start;
             border-right: 2px solid #3A3A3A;
+            overflow-y: auto;
         }
 
         .left-column h1 {
             color: #FFFFFF; /* White text color */
             font-size: 2.5em;
             margin-bottom: 20px;
-            position: relative;
-            top: -20px; /* Move it up a little */
         }
 
         .profile-card {
@@ -52,8 +53,8 @@
 
         .profile-card img {
             border-radius: 50%;
-            width: 25%; /* Adjusted size */
-            height: 25%; /* Adjusted size */
+            width: 40%; /* Adjusted size for better display */
+            height: 40%; /* Adjusted size for better display */
             margin-bottom: 15px;
             animation: bounceIn 1s ease;
         }
@@ -64,15 +65,13 @@
         }
 
         .social-links { 
-            grid-template-rows: repeat(3, 1fr); 
-            gap: 10px;
             margin-top: 20px;
             color: silver;
         }
 
         .social-links a {
-            display: grid;
-            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
             transition: color 0.3s;
         }
 
@@ -80,27 +79,40 @@
             color: #FFFFFF; /* White text on hover */
         }
 
+        /* No filter for Font Awesome icons */
         .social-links a i {
             font-size: 32px;
         }
 
+        /* Filter for non-Font Awesome SVG images */
+        .social-links a img.svg-filter-silver {
+            filter: invert(94%) sepia(11%) saturate(0%) hue-rotate(292deg) brightness(81%) contrast(89%);
+        }
+
         .languages-grid {
             display: grid;
-            grid-template-columns: repeat(3, 3fr);
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
             gap: 10px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .languages-grid img {
-            width: 64px;
-            height: 64px;
-            color: silver;
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .languages-grid img:hover {
+            filter: grayscale(0%);
         }
 
         .right-column {
             width: 70%;
             padding: 20px;
-            display: grid;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
         }
 
         .projects-header {
@@ -131,7 +143,7 @@
             flex-wrap: wrap;
             gap: 10px;
             height: calc(100% - 60px); /* Ensure it doesn't overlap the header */
-            overflow-y: scroll;
+            overflow-y: auto;
         }
 
         .project {
@@ -147,17 +159,18 @@
         }
 
         .project iframe {
-            width: 75%; /* Size of the project iframes */
-            height: 75%;
+            width: 100%; /* Fill the container */
+            height: 250px;
             border-radius: 5px;
             margin-bottom: 10px;
         }
 
         .project img {
-            width: 75%;
-            height: 75%;
+            width: 100%;
+            height: auto;
             border-radius: 5px;
             margin-bottom: 10px;
+        }
 
         .project h3 {
             margin: 0;
@@ -167,9 +180,31 @@
             margin: 5px 0 0;
         }
 
-        .svg-filter-silver {
-            filter: invert(94%) sepia(11%) saturate(0%) hue-rotate(292deg) brightness(81%) contrast(89%);
+        /* Responsive tweaks for smaller screens */
+        @media (max-width: 768px) {
+            .left-column {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .right-column {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .languages-grid {
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            }
+
+            .project {
+                width: calc(50% - 10px); /* Two projects per row on smaller screens */
+            }
+
+            .projects-header input[type="text"] {
+                width: 100%;
+            }
         }
+
     </style>
 </head>
 <body>
@@ -183,10 +218,15 @@
             </div>
             <div class="social-links">
                 <h2>"What's internet privacy again?"</h2>
-                <a href="https://www.youtube.com/@_Vanze_"><img src="images/youtube-brands-solid.svg" height="32" width="32" alt="Youtube Icon" class="svg-filter-silver"></a>
-                <a href="#" onclick="thisAintDoShit()"><img src="images/discord-brands-solid.svg" height="32" width="32" alt="Discord Icon" class="svg-filter-silver"></a>
+                <!-- Font Awesome Icons: No filter needed -->
+                <a href="https://www.youtube.com/@_Vanze_"><i class="fab fa-youtube"></i></a>
+                <a href="#" onclick="thisAintDoShit()"><i class="fab fa-discord"></i></a>
+                <a href="#" onclick="thisAintDoShit()"><i class="fab fa-twitter"></i></a>
                 <script>function thisAintDoShit() { alert("This Aint do shit yet lil bro");}</script>
-                <a href="#" onclick="thisAintDoShit()"><img src="images/twitter-brands-solid.svg" height="32" width="32" alt="Twitter Icon" class="svg-filter-silver"></a>
+
+                <!-- Non-Font Awesome SVG icons with filter -->
+                <a href="#"><img src="images/discord-brands-solid.svg" alt="Discord Icon" class="svg-filter-silver"></a>
+                <a href="#"><img src="images/twitter-brands-solid.svg" alt="Twitter Icon" class="svg-filter-silver"></a>
             </div>
             <h3>Languages I use</h3>
             <div class="languages-grid">
@@ -228,6 +268,7 @@
                     <h3>Cube?</h3>
                     <p>cube.</p>
                     <iframe src="https://literal-gargoyle.github.io/Cube/" frameborder="0"><a href="https://literal-gargoyle.github.io/Cube/">https://literal-gargoyle.github.io/Cube/</a></iframe>
+                </div>
             </div>
         </div>
     </div>
