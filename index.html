@@ -53,8 +53,8 @@
 
         .profile-card img {
             border-radius: 50%;
-            width: 40%; /* Adjusted size for better display */
-            height: 40%; /* Adjusted size for better display */
+            width: 100px; /* Adjusted size for better display */
+            height: 100px; /* Adjusted size for better display */
             margin-bottom: 15px;
             animation: bounceIn 1s ease;
         }
@@ -72,18 +72,18 @@
         .social-links a {
             display: inline-block;
             margin: 10px;
-            transition: color 0.3s;
+            transition: color 0.3s, box-shadow 0.3s;
         }
 
         .social-links a:hover {
             color: #FFFFFF; /* White text on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* No filter for Font Awesome icons */
-        .social-links a i {
-            font-size: 32px;
-            height: 30%;
-            width: 30%:
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+            transition: filter 0.3s ease;
         }
 
         /* Filter for non-Font Awesome SVG images */
@@ -206,23 +206,22 @@
                 width: 100%;
             }
         }
-
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-column">
+        <section class="left-column">
             <h1>literal gargoyle</h1>
             <div class="profile-card">
-                <img src="/images/Profile.gif" alt="Profile Picture">
+                <img src="/images/Profile.gif" alt="Profile picture of literal gargoyle">
                 <p>stupid lil' man</p>
                 <p>"Just remember, no caps when you spell the man name"</p>
             </div>
             <div class="social-links">
                 <h2>"What's internet privacy again?"</h2>
-                <a href="https://www.youtube.com/@_Vanze_"><img src="/images/youtube-brands-solid.svg" alt="youtube Icon" class="svg-filter-silver></img></a>
-                <a href="https://www.x.com/gargoyle_code"><img src="/images/twitter-brands-solid.svg" alt="Twitter Icon" class="svg-filter-silver></img></a>
-                <a href="http://www.discordapp.com/users/1040750589841248329"><img src="/images/discord-brands-solid.svg" alt="Discord Icon" class="svg-filter-silver></img></a>
+                <a href="https://www.youtube.com/@_Vanze_"><img src="/images/youtube-brands-solid.svg" alt="youtube Icon" class="svg-filter-silver"></a>
+                <a href="https://www.x.com/gargoyle_code"><img src="/images/twitter-brands-solid.svg" alt="Twitter Icon" class="svg-filter-silver"></a>
+                <a href="http://www.discordapp.com/users/1040750589841248329"><img src="/images/discord-brands-solid.svg" alt="Discord Icon" class="svg-filter-silver"></a>
             </div>
             <h3>Languages I use</h3>
             <div class="languages-grid">
@@ -234,12 +233,13 @@
                 <img src="images/c++.svg" alt="C++ Logo" class="svg-filter-silver">
                 <img src="images/flask.svg" alt="Flask Logo" class="svg-filter-silver">
                 <img src="images/swift.svg" alt="Swift Logo" class="svg-filter-silver">
-                <img src="images/mysql.svg" alt="mysql Logo" class="svg-filter-silver">
+                <img src="images/mysql.svg" alt="MySQL Logo" class="svg-filter-silver">
                 <img src="images/lua.svg" alt="Lua Logo" class="svg-filter-silver">
                 <img src="images/bash.svg" alt="Bash Logo" class="svg-filter-silver">
             </div>
-        </div>
-        <div class="right-column">
+        </section>
+
+        <section class="right-column">
             <div class="projects-header">
                 <h2>Projects</h2>
                 <input type="text" id="search" placeholder="Search projects...">
@@ -263,10 +263,12 @@
                 <div class="project">
                     <h3>Cube?</h3>
                     <p>cube.</p>
-                    <iframe src="https://literal-gargoyle.github.io/Cube/" frameborder="0"><a href="https://literal-gargoyle.github.io/Cube/">https://literal-gargoyle.github.io/Cube/</a></iframe>
+                    <a href="https://literal-gargoyle.github.io/Cube/">
+                        <iframe src="https://literal-gargoyle.github.io/Cube/" frameborder="0"></iframe>
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>
