@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>literal gargoyle</title>
+    <title>Literal Gargoyle</title>
     <link rel="icon" type="image/gif" href="/images/Profile.gif">
     <script src="https://kit.fontawesome.com/0485d5d175.js" crossorigin="anonymous"></script>
     
@@ -82,17 +82,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .social-links a img {
-            width: 40px;
-            height: 40px;
-            transition: filter 0.3s ease;
-        }
-
-        /* Filter for non-Font Awesome SVG images */
-        .social-links a img.svg-filter-silver {
-            fill: silver;
-        }
-
         .languages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
@@ -144,7 +133,7 @@
 
         .projects {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
             height: calc(100% - 60px); /* Ensure it doesn't overlap the header */
             overflow-y: auto;
@@ -152,28 +141,13 @@
 
         .project {
             background-color: #5A5A5A; /* Slightly lighter for project cards */
-            width: calc(33% - 10px); /* Three projects per row with gap */
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .project iframe {
-            width: 100%; /* Fill the container */
-            height: 250px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .project img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .project h3 {
@@ -182,6 +156,17 @@
 
         .project p {
             margin: 5px 0 0;
+        }
+
+        .project a {
+            margin-top: 10px;
+            color: #D3D3D3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            color: #FFFFFF;
         }
 
         /* Responsive tweaks for smaller screens */
@@ -200,10 +185,6 @@
                 grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
             }
 
-            .project {
-                width: calc(50% - 10px); /* Two projects per row on smaller screens */
-            }
-
             .projects-header input[type="text"] {
                 width: 100%;
             }
@@ -215,29 +196,14 @@
         <section class="left-column">
             <h1>literal gargoyle</h1>
             <div class="profile-card">
-                <img src="/images/Profile.gif" alt="Profile picture of literal gargoyle">
                 <p>stupid lil' man</p>
                 <p>"Just remember, no caps when you spell the man name"</p>
             </div>
             <div class="social-links">
                 <h2>"What's internet privacy again?"</h2>
-                <a href="https://www.youtube.com/@_Vanze_"><img src="/images/youtube-brands-solid.svg" alt="youtube Icon" class="svg-filter-silver"></a>
-                <a href="https://www.x.com/gargoyle_code"><img src="/images/twitter-brands-solid.svg" alt="Twitter Icon" class="svg-filter-silver"></a>
-                <a href="http://www.discordapp.com/users/1040750589841248329"><img src="/images/discord-brands-solid.svg" alt="Discord Icon" class="svg-filter-silver"></a>
-            </div>
-            <h3>Languages I use</h3>
-            <div class="languages-grid">
-                <img src="images/python-brands-solid.svg" alt="Python Logo" class="svg-filter-silver">
-                <img src="images/html5-brands-solid.svg" alt="HTML Logo" class="svg-filter-silver">
-                <img src="images/css3-alt-brands-solid.svg" alt="CSS Logo" class="svg-filter-silver">
-                <img src="images/square-js-brands-solid.svg" alt="JS Logo" class="svg-filter-silver">
-                <img src="images/c.svg" alt="C# Logo" class="svg-filter-silver">
-                <img src="images/c++.svg" alt="C++ Logo" class="svg-filter-silver">
-                <img src="images/flask.svg" alt="Flask Logo" class="svg-filter-silver">
-                <img src="images/swift.svg" alt="Swift Logo" class="svg-filter-silver">
-                <img src="images/mysql.svg" alt="MySQL Logo" class="svg-filter-silver">
-                <img src="images/lua.svg" alt="Lua Logo" class="svg-filter-silver">
-                <img src="images/bash.svg" alt="Bash Logo" class="svg-filter-silver">
+                <a href="https://www.youtube.com/@_Vanze_">YouTube</a>
+                <a href="https://www.x.com/gargoyle_code">Twitter</a>
+                <a href="http://www.discordapp.com/users/1040750589841248329">Discord</a>
             </div>
         </section>
 
@@ -246,31 +212,74 @@
                 <h2>Projects</h2>
                 <input type="text" id="search" placeholder="Search projects...">
             </div>
-            <div class="projects">
-                <div class="project">
-                    <h3>Cesium</h3>
-                    <p>An extremely lightweight Browser Proxy</p>
-                    <a href="https://literal-gargoyle.github.io/Cesium/"><img src="/images/cesium.png" alt="Cesium project image, im still clickable!"></a>
-                </div>
-                <div class="project">
-                    <h3>Minecraft /give Visualizer</h3>
-                    <p>Lets you see the item, its json data, the player, and the image sprite</p>
-                    <a href="https://literal-gargoyle.github.io/Minecraft-give-visualizer/"><img src="/images/mcgv.png" alt="Minecraft /give Visualizer project image, im still clickable!"></a>
-                </div>
-                <div class="project">
-                    <h3>BulbaNotes</h3>
-                    <p>A simple note taking app that saves with cookies</p>
-                    <a href="https://literal-gargoyle.github.io/BulbaNotes/"><img src="/images/bn.png" alt="Bulbanotes project image, im still clickable!"></a>
-                </div>
-                <div class="project">
-                    <h3>Cube?</h3>
-                    <p>cube.</p>
-                    <a href="https://literal-gargoyle.github.io/Cube/">
-                        <iframe src="https://literal-gargoyle.github.io/Cube/" frameborder="0"></iframe>
-                    </a>
-                </div>
+            <div class="projects" id="project-list">
+                <!-- Projects will be dynamically added here -->
             </div>
         </section>
     </div>
+
+    <script>
+        // Sample project data
+        const projects = [
+            {
+                title: "Cesium",
+                description: "An extremely lightweight Browser Proxy",
+                repoLink: "https://literal-gargoyle.github.io/Cesium/"
+            },
+            {
+                title: "Minecraft /give Visualizer",
+                description: "Lets you see the item, its json data, the player, and the image sprite",
+                repoLink: "https://literal-gargoyle.github.io/Minecraft-give-visualizer/"
+            },
+            {
+                title: "BulbaNotes",
+                description: "A simple note taking app that saves with cookies",
+                repoLink: "https://literal-gargoyle.github.io/BulbaNotes/"
+            },
+            {
+                title: "Cube?",
+                description: "cube.",
+                repoLink: "https://literal-gargoyle.github.io/Cube/"
+            },
+            {
+                title: "Skrybe",
+                description: "A python application that types input text at human speed with configurable variables.",
+                repoLink: "https://github.com/literal-gargoyle/Skrybe"
+            }
+        ];
+
+        // Function to display projects
+        function displayProjects(projectsToShow) {
+            const projectList = document.getElementById("project-list");
+            projectList.innerHTML = '';  // Clear the list before displaying new projects
+
+            projectsToShow.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.classList.add('project');
+                projectDiv.innerHTML = `
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <a href="${project.repoLink}" target="_blank">View Repository</a>
+                `;
+                projectList.appendChild(projectDiv);
+            });
+        }
+
+        // Function for search functionality
+        function searchProjects() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const filteredProjects = projects.filter(project =>
+                project.title.toLowerCase().includes(query) ||
+                project.description.toLowerCase().includes(query)
+            );
+            displayProjects(filteredProjects);
+        }
+
+        // Initial display of all projects
+        displayProjects(projects);
+
+        // Event listener for the search bar
+        document.getElementById('search').addEventListener('input', searchProjects);
+    </script>
 </body>
 </html>
