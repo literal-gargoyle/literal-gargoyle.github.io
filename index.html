@@ -244,6 +244,10 @@
         // Sample project data
         const projects = [
             {
+                title: "Science Project!!"
+                description: "My very epik science project"
+                repoLink: "https://literal-gargoyle.github.io/science-project/"
+            {
                 title: "Cesium",
                 description: "An extremely lightweight Browser Proxy; Coded in Html, Css, Js, and Flask",
                 repoLink: "https://literal-gargoyle.github.io/Cesium/"
@@ -296,7 +300,7 @@
                 projectDiv.innerHTML = `
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
-                    <a href="${project.repoLink}" target="_blank">View Repository</a>
+                    <a href="${project.repoLink}" target="_blank">View Repository/Website</a>
                 `;
                 projectList.appendChild(projectDiv);
             });
