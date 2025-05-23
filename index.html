@@ -1,245 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>literal-gargoyle</title>
-    <link rel="icon" type="image/gif" href="/images/Profile.gif">
-    <script src="https://kit.fontawesome.com/0485d5d175.js" crossorigin="anonymous"></script>
-    
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>literal-gargoyle</title>
+  <link rel="icon" type="image/gif" href="/images/Profile.gif" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #66a3ff;
+      --background: #f4f7fb;
+      --card-bg: #ffffff;
+      --hover: #e6f0ff;
+      --accent: #0055aa;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-        background-color: #add8e6; /* Light Blue */
-        color: #003366; /* Dark Blue Text */
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--primary);
+      background-color: var(--background);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .container {
-        display: flex;
-        flex: 1;
-        overflow: hidden;
+      display: flex;
+      width: 100%;
     }
 
     .left-column {
-        width: 30%;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        border-right: 2px solid #66a3ff; /* Soft Blue */
-        overflow-y: auto;
-    }
-
-    .left-column h1 {
-        color: #003366; /* Dark Blue */
-        font-size: 2.5em;
-        margin-bottom: 20px;
-    }
-
-    .profile-card {
-        background-color: #66a3ff; /* Light Blue Background */
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        width: 75%;
-    }
-
-    .profile-card img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        margin-bottom: 15px;
-    }
-
-    .profile-card p {
-        font-size: 1.2em;
-        margin: 10px 0;
-    }
-
-    .social-links a:hover {
-        color: #003366;
+      width: 30%;
+      padding: 30px;
+      border-right: 1px solid var(--secondary);
+      background-color: #fff;
+      overflow-y: auto;
     }
 
     .right-column {
-        width: 70%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
+      width: 70%;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 15px;
+    }
+
+    .profile-card {
+      text-align: center;
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .profile-card img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 10px;
+    }
+
+    .profile-card p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .social-links a img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-links a:hover img {
+      transform: scale(1.1);
+    }
+
+    .languages-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .languages-grid img {
+      width: 30px;
+      height: 30px;
     }
 
     .projects-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        background-color: #66a3ff; /* Light Blue */
-        padding: 10px;
-        border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
-    .projects-header h2 {
-        margin: 0;
+    .projects-header input {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
     }
 
     .project {
-        background-color: #99c2ff; /* Lighter Blue */
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px var(--shadow);
+    }
+
+    .project h3 {
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .project p {
+      margin-bottom: 10px;
     }
 
     .project a {
-        color: #003366;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
     }
 
     .project a:hover {
-        color: #000033;
+      color: var(--accent);
     }
-</style>
 
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-column,
+      .right-column {
+        width: 100%;
+      }
+
+      .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <section class="left-column">
-            <h1>literal gargoyle</h1>
-            <div class="profile-card">
-                <img src="/images/Profile.gif" alt="Profile picture of literal gargoyle">
-                <p>stupid lil' man</p>
-                <p>"Just remember, no caps when you spell the man name"</p>
-            </div>
-            <div class="social-links">
-                <h2>"What's internet privacy again?"</h2>
-                <a href="https://www.youtube.com/@literal-gargoyle"><img src="/images/youtube-brands-solid.svg" alt="youtube Icon" class="svg-filter-silver"></a>
-                <a href="https://www.x.com/gargoyle_code"><img src="/images/twitter-brands-solid.svg" alt="Twitter Icon" class="svg-filter-silver"></a>
-                <a href="http://www.discordapp.com/users/1040750589841248329"><img src="/images/discord-brands-solid.svg" alt="Discord Icon" class="svg-filter-silver"></a>
-            </div>
-            <h3>Languages I use</h3>
-            <div class="languages-grid">
-                <img src="images/python-brands-solid.svg" alt="Python Logo" class="svg-filter-silver">
-                <img src="images/html5-brands-solid.svg" alt="HTML Logo" class="svg-filter-silver">
-                <img src="images/css3-alt-brands-solid.svg" alt="CSS Logo" class="svg-filter-silver">
-                <img src="images/square-js-brands-solid.svg" alt="JS Logo" class="svg-filter-silver">
-                <img src="images/c.svg" alt="C# Logo" class="svg-filter-silver">
-                <img src="images/c++.svg" alt="C++ Logo" class="svg-filter-silver">
-                <img src="images/flask.svg" alt="Flask Logo" class="svg-filter-silver">
-                <img src="images/swift.svg" alt="Swift Logo" class="svg-filter-silver">
-                <img src="images/mysql.svg" alt="MySQL Logo" class="svg-filter-silver">
-                <img src="images/lua.svg" alt="Lua Logo" class="svg-filter-silver">
-                <img src="images/bash.svg" alt="Bash Logo" class="svg-filter-silver">
-                <img src="images/kotlin.svg" alt="Kotlin Logo" class="svg-filter-silver">
-                <img src="images/java.svg" alt="Java Logo" class="svg-filter-silver">
-            </div>
-        </section>
+  <div class="container">
+    <section class="left-column">
+      <h1>literal gargoyle</h1>
+      <div class="profile-card">
+        <img src="/images/Profile.gif" alt="Profile picture of literal gargoyle" />
+        <p>Developer & Creator</p>
+        <p style="font-style: italic;">"Just remember, no caps when you spell the man name"</p>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@literal-gargoyle" target="_blank"><img src="/images/youtube-brands-solid.svg" alt="YouTube" /></a>
+          <a href="https://www.x.com/gargoyle_code" target="_blank"><img src="/images/twitter-brands-solid.svg" alt="Twitter" /></a>
+          <a href="http://www.discordapp.com/users/1040750589841248329" target="_blank"><img src="/images/discord-brands-solid.svg" alt="Discord" /></a>
+        </div>
+      </div>
+      <div>
+        <h3>Languages & Tools</h3>
+        <div class="languages-grid">
+          <img src="images/python-brands-solid.svg" alt="Python" />
+          <img src="images/html5-brands-solid.svg" alt="HTML" />
+          <img src="images/css3-alt-brands-solid.svg" alt="CSS" />
+          <img src="images/square-js-brands-solid.svg" alt="JavaScript" />
+          <img src="images/c.svg" alt="C#" />
+          <img src="images/c++.svg" alt="C++" />
+          <img src="images/flask.svg" alt="Flask" />
+          <img src="images/swift.svg" alt="Swift" />
+          <img src="images/mysql.svg" alt="MySQL" />
+          <img src="images/lua.svg" alt="Lua" />
+          <img src="images/bash.svg" alt="Bash" />
+          <img src="images/kotlin.svg" alt="Kotlin" />
+          <img src="images/java.svg" alt="Java" />
+        </div>
+      </div>
+    </section>
 
-        <section class="right-column">
-            <div class="projects-header">
-                <h2>Projects</h2>
-                <input type="text" id="search" placeholder="Search projects...">
-            </div>
-            <div class="projects" id="project-list">
-                <!-- Projects will be dynamically added here -->
-            </div>
-        </section>
-    </div>
+    <section class="right-column">
+      <div class="projects-header">
+        <h2>Projects</h2>
+        <input type="text" id="search" placeholder="Search projects..." />
+      </div>
+      <div id="project-list"></div>
+    </section>
+  </div>
 
-    <script>
-        // Sample project data
-        const projects = [
-            {
-                title: "Science Project!!",
-                description: "My very epik science project",
-                repoLink: "https://literal-gargoyle.github.io/science-project/"
-            },
-            {
-                title: "Scribble",
-                description: "Python: Image to C++ Vex V5 Image display code",
-                repoLink: "https://github.com/literal-gargoyle/scribble/"
-            },
-            {
-                title: "Cesium",
-                description: "An extremely lightweight Browser Proxy; Coded in Html, Css, Js, and Flask",
-                repoLink: "https://literal-gargoyle.github.io/Cesium/"
-            },
-            {
-                title: "Minecraft /give Visualizer",
-                description: "Lets you see the item, its json data, the player, and the image sprite; Coded in Html, Css, and Js",
-                repoLink: "https://literal-gargoyle.github.io/Minecraft-give-visualizer/"
-            },
-            {
-                title: "BulbaNotes",
-                description: "A simple note taking app that saves with cookies: Coded in Html, Css, and Js",
-                repoLink: "https://literal-gargoyle.github.io/BulbaNotes/"
-            },
-            {
-                title: "Cube?",
-                description: "cube; Coded in Html, Css, and 3js",
-                repoLink: "https://literal-gargoyle.github.io/Cube/"
-            },
-            {
-                title: "Skrybe",
-                description: "A python application that types input text at human speed with configurable variables; Coded in Python",
-                repoLink: "https://github.com/literal-gargoyle/Skrybe"
-            },
-            {
-                title: "viSion",
-                description: "A web application that has a mock python console that users can use; Coded in Python and Html, Css, and Js",
-                repoLink: "https://github.com/literal-gargoyle/viSion"
-            },
-            {
-                title: "Atomic",
-                description: "A simple python program that uses TK to create a custom GUI to check minecraft server status; Coded in Python",
-                repoLink: "https://github.com/literal-gargoyle/Atomic"
-            },
-            {
-                title: "Random Kit Selector (RKS)",
-                description: "An automatic kit giving paper plugin",
-                repoLink: "https://github.com/literal-gargoyle/randomKitSelector"
-            }
-        ];
+  <script>
+    const projects = [
+      {
+        title: "Science Project",
+        description: "My very epik science project",
+        repoLink: "https://literal-gargoyle.github.io/science-project/"
+      },
+      {
+        title: "Scribble",
+        description: "Python: Image to C++ Vex V5 image display code",
+        repoLink: "https://github.com/literal-gargoyle/scribble/"
+      },
+      {
+        title: "Cesium",
+        description: "A lightweight browser proxy using HTML, CSS, JS, and Flask",
+        repoLink: "https://literal-gargoyle.github.io/Cesium/"
+      },
+      {
+        title: "Minecraft /give Visualizer",
+        description: "Item visualizer with JSON data and sprites",
+        repoLink: "https://literal-gargoyle.github.io/Minecraft-give-visualizer/"
+      },
+      {
+        title: "BulbaNotes",
+        description: "Cookie-based note-taking app",
+        repoLink: "https://literal-gargoyle.github.io/BulbaNotes/"
+      },
+      {
+        title: "Cube?",
+        description: "3D cube experiment using Three.js",
+        repoLink: "https://literal-gargoyle.github.io/Cube/"
+      },
+      {
+        title: "Skrybe",
+        description: "Python app that simulates human typing",
+        repoLink: "https://github.com/literal-gargoyle/Skrybe"
+      },
+      {
+        title: "viSion",
+        description: "Mock Python console in the browser",
+        repoLink: "https://github.com/literal-gargoyle/viSion"
+      },
+      {
+        title: "Atomic",
+        description: "Minecraft server status checker in Python",
+        repoLink: "https://github.com/literal-gargoyle/Atomic"
+      },
+      {
+        title: "Random Kit Selector (RKS)",
+        description: "Automatic Minecraft Paper plugin for kit selection",
+        repoLink: "https://github.com/literal-gargoyle/randomKitSelector"
+      }
+    ];
 
-        // Function to display projects
-        function displayProjects(projectsToShow) {
-            const projectList = document.getElementById("project-list");
-            projectList.innerHTML = '';  // Clear the list before displaying new projects
+    function displayProjects(projectsToShow) {
+      const projectList = document.getElementById("project-list");
+      projectList.innerHTML = "";
+      projectsToShow.forEach(project => {
+        const div = document.createElement("div");
+        div.classList.add("project");
+        div.innerHTML = `
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <a href="${project.repoLink}" target="_blank">View Repository</a>
+        `;
+        projectList.appendChild(div);
+      });
+    }
 
-            projectsToShow.forEach(project => {
-                const projectDiv = document.createElement('div');
-                projectDiv.classList.add('project');
-                projectDiv.innerHTML = `
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <a href="${project.repoLink}" target="_blank">View Repository</a>
-                `;
-                projectList.appendChild(projectDiv);
-            });
-        }
+    function searchProjects() {
+      const query = document.getElementById("search").value.toLowerCase();
+      const filtered = projects.filter(p =>
+        p.title.toLowerCase().includes(query) ||
+        p.description.toLowerCase().includes(query)
+      );
+      displayProjects(filtered);
+    }
 
-        // Function for search functionality
-        function searchProjects() {
-            const query = document.getElementById('search').value.toLowerCase();
-            const filteredProjects = projects.filter(project =>
-                project.title.toLowerCase().includes(query) ||
-                project.description.toLowerCase().includes(query)
-            );
-            displayProjects(filteredProjects);
-        }
-
-        // Initial display of all projects
-        displayProjects(projects);
-
-        // Event listener for the search bar
-        document.getElementById('search').addEventListener('input', searchProjects);
-    </script>
+    displayProjects(projects);
+    document.getElementById("search").addEventListener("input", searchProjects);
+  </script>
 </body>
 </html>
